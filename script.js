@@ -1,19 +1,22 @@
-let numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?");
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 let films = {
 
 };
 let arr = [];
 
-let lastFilm = prompt("Один из последних просмотренных фильмов?");
-let gradeFilm = prompt("На сколько оцените его?");
+let a = prompt("Один из последних просмотренных фильмов?", "");
+let b = +prompt("На сколько оцените его?","");
+let c = prompt("Один из последних просмотренных фильмов?", "");
+let d = +prompt("На сколько оцените его?","");
 
-films[lastFilm] = gradeFilm;
-
-let personalMovieDB = {
+const personalMovieDB = {
     count: numberOfFilms,
-    movies: films,
-    actors: films,
+    movies: {},
+    actors: {},
     genres: arr,
-    privat: false,
+    privat: false
 };
-console.log(personalMovieDB.movies);
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+console.log(personalMovieDB);
