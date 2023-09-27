@@ -10,14 +10,14 @@ const personalMovieDB = {
     privat: false
 };
 
-for (let i = 1; i<3; i++) {
+for (let i = 1; i < 3; i++) {
     let a = prompt("Один из последних просмотренных фильмов?", "");
     let b = +prompt("На сколько оцените его?","");
-    if ((a == "" || a.length > 50) || (b == "" || b.length > 50)) {
-        i--;
+    if (a != "" && a.length < 50 && a != null && b != "" && b.length < 50 && b != null) {
+        personalMovieDB.movies[a] = b;
     }
     else {
-        personalMovieDB.movies[a] = b;
+        i--;
     }
 }
 
@@ -25,12 +25,12 @@ console.log(personalMovieDB);
 
 if (personalMovieDB.count < 10) {
     console.log("Мало");
-}
-else if ((personalMovieDB.count > 9) && (personalMovieDB.count < 31)) {
+} else if ((personalMovieDB.count > 9) && (personalMovieDB.count < 31)) {
     console.log("Классика");
-}
-else {
+} else if (personalMovieDB.count > 30) {
     console.log("Киноман");
+} else {
+    console.log("Error!");
 }
 // let i=1;
 
