@@ -45,20 +45,18 @@ function detectPersonalLevel() {
 
 detectPersonalLevel();
 
-function showMyDB() {
-    console.log(personalMovieDB);
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }    
 }
 
-if (personalMovieDB.privat == false) {
-    showMyDB();
-} else {
-    console.log("TRUE");
-}
+showMyDB(personalMovieDB.privat);
+
 
 function writeYourGenres() {
     for (let i = 0; i < 3; i++) {
-        let numberGenres = prompt(`Ваш любимый жанр под номером ${1 + i}?`, "");
-        personalMovieDB.genres[i] = numberGenres;
+        personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${1 + i}?`, "");
     }
     
 }
